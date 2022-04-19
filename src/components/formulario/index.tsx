@@ -2,14 +2,12 @@ import React from 'react';
 import Button from '../button';
 import style from './Formulario.module.scss';
 import { v4 as uuidv4} from 'uuid';
+import { ITarefa } from '../../types/Tarefas';
 
 class Formulario extends React.Component<{
-    setTarefas: React.Dispatch<React.SetStateAction<{
-        tarefa: string;
-        tempo: string;
-    }[]>>
-    }>{    
-state = {
+    setTarefas: React.Dispatch<React.SetStateAction<ITarefa[]>>
+}>{
+    state = {
         tarefa: "",
         tempo: "00:00"
     }

@@ -1,13 +1,10 @@
 import React, { useState } from "react";
+import { ITarefa } from "../../types/Tarefas";
 import { Item } from "./item";
 import style from './Lista.module.scss';
 
-interface ITarefa{
-  tarefa: string
-  tempo: string
-}
 
-export function Lista({tarefas}: {tarefas: ITarefa[] }) {
+export function Lista({tarefas, selecionaTarefa}:Props) {
   return (
     <aside className={style.listaTarefas}>
       <h2>Estudos do Dia</h2>
@@ -15,6 +12,7 @@ export function Lista({tarefas}: {tarefas: ITarefa[] }) {
         {tarefas.map((item, index) => (
           <Item 
             key={index}
+            selecionaTarefa={selecionaTarefa}
             selecionado={false}
             completado={false}
             id={""}
